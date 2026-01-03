@@ -15,18 +15,15 @@
   <style>
     :root {
       /* ПАЛИТРА AIREX */
-      --accent-color: #e91e63; /* Основной акцент */
+      --accent-color: #e91e63;
       --accent-glow: rgba(255, 0, 60, 0.6); 
-      
-      --bg-deep: #050505; /* Почти черный */
-      --glass-dark: rgba(10, 10, 10, 0.75); /* Темное стекло */
-      --glass-border: rgba(255, 255, 255, 0.08); /* Тонкая рамка */
-      
+      --bg-deep: #050505;
+      --glass-dark: rgba(10, 10, 10, 0.75);
+      --glass-border: rgba(255, 255, 255, 0.08);
       --text-white: #ffffff;
       --text-gray: #b0b0b0;
-
       --font-main: 'Montserrat', sans-serif;
-      --font-tech: 'Orbitron', sans-serif; /* Для ников и заголовков */
+      --font-tech: 'Orbitron', sans-serif;
     }
 
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -38,17 +35,15 @@
       color: var(--text-white);
       min-height: 100vh;
       overflow-x: hidden;
-      padding-top: 80px; /* Отступ под меню */
+      padding-top: 80px;
     }
 
-    /* --- ФОНОВЫЙ ЛОГОТИП (Watermark) --- */
+    /* --- ФОНОВЫЙ ЛОГОТИП --- */
     .bg-logo {
       position: fixed;
-      top: 50%;
-      left: 50%;
+      top: 50%; left: 50%;
       transform: translate(-50%, -50%);
-      width: 80vw;
-      height: 80vh;
+      width: 80vw; height: 80vh;
       background: url('logo.png') center/contain no-repeat;
       opacity: 0.07;
       z-index: -1;
@@ -56,7 +51,6 @@
       pointer-events: none;
     }
     
-    /* Шум для текстуры */
     .bg-noise {
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
@@ -82,56 +76,31 @@
     }
 
     .nav-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-right: 20px;
+      display: flex; align-items: center; gap: 12px; margin-right: 20px;
     }
-
     .nav-brand img {
-      height: 40px;
-      width: auto;
-      filter: drop-shadow(0 0 5px var(--accent-glow));
+      height: 40px; width: auto; filter: drop-shadow(0 0 5px var(--accent-glow));
     }
-
     .nav-brand h1 {
-      font-family: var(--font-tech);
-      font-size: 18px;
-      margin: 0;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      font-family: var(--font-tech); font-size: 18px; margin: 0;
+      text-transform: uppercase; letter-spacing: 2px;
       background: linear-gradient(90deg, #fff, #bbb);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
 
     .nav-menu {
-      display: flex;
-      gap: 5px;
-      overflow-x: auto;
-      height: 100%;
-      align-items: center;
+      display: flex; gap: 5px; overflow-x: auto; height: 100%; align-items: center;
       scrollbar-width: none;
     }
     .nav-menu::-webkit-scrollbar { display: none; }
 
     .nav-btn {
-      background: transparent;
-      border: none;
-      color: var(--text-gray);
-      font-family: var(--font-tech);
-      font-size: 12px;
-      text-transform: uppercase;
-      padding: 8px 16px;
-      cursor: pointer;
-      transition: 0.3s;
-      white-space: nowrap;
-      border-radius: 4px;
-      letter-spacing: 1px;
+      background: transparent; border: none; color: var(--text-gray);
+      font-family: var(--font-tech); font-size: 12px; text-transform: uppercase;
+      padding: 8px 16px; cursor: pointer; transition: 0.3s;
+      white-space: nowrap; border-radius: 4px; letter-spacing: 1px;
     }
-
     .nav-btn:hover { color: #fff; }
-
     .nav-btn.active {
       color: #fff;
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
@@ -140,151 +109,196 @@
     }
 
     /* --- КОНТЕНТ --- */
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+    .container { max-width: 900px; margin: 0 auto; padding: 20px; }
 
-    section {
-      display: none;
-      animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
+    section { display: none; animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
     section.active { display: block; }
 
     .card {
       background: var(--glass-dark);
       border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 30px;
-      margin-bottom: 24px;
-      position: relative;
-      overflow: hidden;
+      border-radius: 20px; padding: 30px; margin-bottom: 24px;
+      position: relative; overflow: hidden;
       box-shadow: 0 20px 40px rgba(0,0,0,0.3);
     }
-
     .card::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; width: 3px; height: 100%;
+      content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%;
       background: linear-gradient(to bottom, var(--accent-color), transparent);
       opacity: 0.8;
     }
 
-    h2, h3 {
-      font-family: var(--font-tech);
-      color: #fff;
-      margin-top: 0;
-      letter-spacing: 1px;
-    }
-
-    p {
-      line-height: 1.7;
-      color: var(--text-gray);
-      font-size: 15px;
-    }
+    h2, h3 { font-family: var(--font-tech); color: #fff; margin-top: 0; letter-spacing: 1px; }
+    p { line-height: 1.7; color: var(--text-gray); font-size: 15px; }
 
     /* --- СЕТКА ИГРОКОВ --- */
     .roster-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 20px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px; justify-content: center;
     }
 
     .player-unit {
       background: rgba(20, 20, 20, 0.6);
       border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 12px;
-      overflow: hidden;
-      position: relative;
-      transition: 0.4s;
-      cursor: pointer;
+      border-radius: 12px; overflow: hidden; position: relative;
+      transition: 0.4s; cursor: pointer;
     }
-
     .player-unit:hover {
-      transform: translateY(-5px);
-      border-color: var(--accent-color);
+      transform: translateY(-5px); border-color: var(--accent-color);
       box-shadow: 0 10px 30px rgba(233, 30, 99, 0.15);
     }
 
     .p-header {
-      padding: 20px;
-      text-align: center;
+      padding: 20px; text-align: center;
       background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
     }
-
     .p-nick {
-      font-family: var(--font-tech);
-      font-size: 24px;
-      font-weight: 700;
-      margin: 0;
+      font-family: var(--font-tech); font-size: 24px; font-weight: 700; margin: 0;
       background: linear-gradient(135deg, #fff 30%, #bbb 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       letter-spacing: 1px;
     }
-
     .p-role {
-      font-size: 11px;
-      text-transform: uppercase;
-      color: var(--accent-color);
-      margin-top: 5px;
-      font-weight: 600;
-      letter-spacing: 2px;
+      font-size: 11px; text-transform: uppercase; color: var(--accent-color);
+      margin-top: 5px; font-weight: 600; letter-spacing: 2px;
     }
-
     .p-stats {
-      padding: 0 20px 20px;
-      opacity: 0.5;
-      font-size: 13px;
-      text-align: center;
-      color: #888;
-      transition: 0.3s;
+      padding: 0 20px 20px; opacity: 0.5; font-size: 13px; text-align: center;
+      color: #888; transition: 0.3s;
     }
-    
-    .player-unit:hover .p-stats {
-      opacity: 1;
-      color: #fff;
-    }
+    .player-unit:hover .p-stats { opacity: 1; color: #fff; }
 
     /* --- КНОПКИ --- */
     .btn-glitch {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 30px;
-      background: transparent;
-      border: 1px solid var(--accent-color);
-      color: #fff;
-      font-family: var(--font-tech);
-      text-transform: uppercase;
-      text-decoration: none;
-      font-size: 12px;
-      letter-spacing: 2px;
-      position: relative;
-      overflow: hidden;
-      transition: 0.3s;
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 14px 30px; background: transparent;
+      border: 1px solid var(--accent-color); color: #fff;
+      font-family: var(--font-tech); text-transform: uppercase; text-decoration: none;
+      font-size: 12px; letter-spacing: 2px; position: relative; overflow: hidden;
+      transition: 0.3s; cursor: pointer;
     }
-
     .btn-glitch:hover {
-      background: var(--accent-color);
-      box-shadow: 0 0 20px var(--accent-glow);
+      background: var(--accent-color); box-shadow: 0 0 20px var(--accent-glow);
     }
 
-    /* --- ПОДВАЛ --- */
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      color: #444;
-      font-size: 12px;
+    /* --- ФОРМА --- */
+    .form-group { margin-bottom: 15px; text-align: left; }
+    .form-label {
+      display: block; color: var(--accent-color); font-size: 10px;
+      margin-bottom: 5px; letter-spacing: 1px; text-transform: uppercase;
       font-family: var(--font-tech);
-      text-transform: uppercase;
-      letter-spacing: 2px;
+    }
+    .form-input {
+      width: 100%; background: rgba(0, 0, 0, 0.3);
+      border: 1px solid var(--glass-border); color: #fff; padding: 12px;
+      border-radius: 8px; font-family: var(--font-main); outline: none; transition: 0.3s;
+    }
+    .form-input:focus {
+      border-color: var(--accent-color); box-shadow: 0 0 10px rgba(233, 30, 99, 0.2);
+    }
+    .form-row { display: flex; gap: 10px; }
+
+    /* --- ВИДЕО --- */
+    .video-wrapper {
+      position: relative; width: 100%; height: 450px;
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--glass-border); cursor: pointer;
+    }
+    .video-preview {
+      width: 100%; height: 100%;
+      background-image: url("https://img.youtube.com/vi/Cq3ej9jtyIY/maxresdefault.jpg");
+      background-size: cover; background-position: center; position: relative;
+    }
+    .play-btn {
+      position: absolute; inset: 0; margin: auto;
+      width: 90px; height: 90px; background: rgba(0, 0, 0, 0.6);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 38px; color: #fff; transition: 0.3s;
+    }
+    .video-wrapper:hover .play-btn {
+      transform: scale(1.1); background: rgba(255, 0, 0, 0.75);
     }
 
+    /* --- ГАЛЕРЕЯ И LIGHTBOX --- */
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 15px; margin-top: 15px;
+    }
+    .gallery-item {
+      position: relative; height: 120px;
+      background-size: cover; background-position: center;
+      border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);
+      overflow: hidden; cursor: pointer;
+      transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .gallery-item:hover {
+      transform: scale(1.05); border-color: var(--accent-color);
+      box-shadow: 0 5px 20px rgba(233, 30, 99, 0.4); z-index: 2;
+    }
+    .gallery-overlay {
+      position: absolute; bottom: 0; left: 0; width: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+      padding: 10px; font-size: 10px; font-family: var(--font-tech);
+      color: #fff; transform: translateY(100%); transition: 0.3s;
+    }
+    .gallery-item:hover .gallery-overlay { transform: translateY(0); }
+
+    /* Lightbox Styles */
+    .lightbox {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.95); backdrop-filter: blur(10px);
+      z-index: 2000; display: none; align-items: center; justify-content: center;
+      flex-direction: column; opacity: 0; transition: opacity 0.3s;
+    }
+    .lightbox.active { display: flex; opacity: 1; }
+    
+    .lightbox-content {
+      position: relative; max-width: 95%; max-height: 80vh;
+    }
+    .lightbox-img {
+      max-width: 100%; max-height: 80vh; border-radius: 8px;
+      box-shadow: 0 0 30px rgba(233, 30, 99, 0.3);
+      user-select: none; touch-action: pan-y; /* Allow vertical scroll, handle horizontal in JS */
+    }
+    .lightbox-caption {
+      margin-top: 15px; color: #fff; font-family: var(--font-tech);
+      text-align: center; letter-spacing: 1px; font-size: 14px;
+    }
+    .lightbox-close {
+      position: absolute; top: 20px; right: 20px; font-size: 30px;
+      color: #fff; cursor: pointer; z-index: 2001; transition: 0.3s;
+    }
+    .lightbox-close:hover { color: var(--accent-color); transform: rotate(90deg); }
+    
+    .lb-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      font-size: 40px; color: rgba(255,255,255,0.5); cursor: pointer;
+      padding: 20px; transition: 0.3s; user-select: none;
+    }
+    .lb-nav:hover { color: var(--accent-color); }
+    .lb-prev { left: 10px; }
+    .lb-next { right: 10px; }
+
+    @media (max-width: 768px) {
+      .lb-nav { display: none; } /* Hide arrows on mobile, use swipe */
+    }
+
+    footer {
+      text-align: center; padding: 40px 20px; color: #444;
+      font-size: 12px; font-family: var(--font-tech);
+      text-transform: uppercase; letter-spacing: 2px;
+    }
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+    
+    /* Social Icons Styles */
+    .social-icon {
+      color: #ff0000; font-size: 32px; transition: 0.3s;
+      text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    }
+    .social-icon:hover {
+      text-shadow: 0 0 20px rgba(255, 0, 0, 1); transform: scale(1.1);
     }
   </style>
 </head>
@@ -305,6 +319,7 @@
       <button class="nav-btn" onclick="openTab('team', this)">Состав</button>
       <button class="nav-btn" onclick="openTab('about', this)">О нас</button>
       <button class="nav-btn" onclick="openTab('news', this)">Новости</button>
+      <button class="nav-btn" onclick="openTab('media', this)">Медиа</button>
       <button class="nav-btn" onclick="openTab('join', this)">Вступить</button>
     </div>
   </nav>
@@ -319,7 +334,7 @@
         </p>
         <p>Идем по пути киберспорта и не думаем останавливаться.</p>
         <br>
-        <button class="btn-glitch" onclick="openTab('join', document.querySelectorAll('.nav-btn')[4])">
+        <button class="btn-glitch" onclick="openTab('join', document.querySelectorAll('.nav-btn')[5])">
           Стать частью команды
         </button>
       </div>
@@ -340,21 +355,18 @@
             <div class="p-role">Captain / Снайпер</div>
           </div>
           <div class="p-stats">
-            «Позор не в том, что ты слаб.
-            Позор в том, что ты так и не попробовал
-            стать сильным»<br>
+            «Позор не в том, что ты слаб. Позор в том, что ты так и не попробовал стать сильным»<br>
             <span style="color:var(--accent-color)">K/D: 5.65</span>
           </div>
         </div>
 
         <div class="player-unit">
           <div class="p-header">
-            <h4 class="p-nick">Intex</h4>
+            <h4 class="p-nick">Inte-X</h4>
             <div class="p-role">Опорник</div>
           </div>
           <div class="p-stats">
-            «Мужчина должен принимать свои поражения
-            с тем же изяществом, с каким празднует свои победы»<br>
+            «Мужчина должен принимать свои поражения с тем же изяществом, с каким празднует победы»<br>
             <span style="color:var(--accent-color)">K/D: 2.08</span>
           </div>
         </div>
@@ -365,65 +377,59 @@
             <div class="p-role">Support / Cap</div>
           </div>
           <div class="p-stats">
-            «Жизнь такова, что поражения
-            неизбежны, но надо стараться,
-            чтобы они не стали правилом»<br>
+            «Жизнь такова, что поражения неизбежны, но надо стараться, чтобы они не стали правилом»<br>
             <span style="color:var(--accent-color)">K/D: 2.02</span>
           </div>
         </div>
 
         <div class="player-unit">
           <div class="p-header">
-            <h4 class="p-nick">nezyyy</h4>
+            <h4 class="p-nick">Nezyyy</h4>
             <div class="p-role">Опен-Фрагер</div>
           </div>
           <div class="p-stats">
-            «Тренируйся с теми, кто сильнее.
-            Не сдавайся там, где сдаются другие.
-            И победишь там, где победить нельзя»<br>
+            «Тренируйся с теми, кто сильнее. Не сдавайся там, где сдаются другие.»<br>
             <span style="color:var(--accent-color)">K/D: 1.40</span>
           </div>
         </div>
-
-         <div class="player-unit">
-          <div class="p-header">
-            <h4 class="p-nick">ToDay</h4>
-            <div class="p-role">Опен-Фрагер</div>
-          </div>
-          <div class="p-stats">
-            «Концентрация решает.»<br>
-            <span style="color:var(--accent-color)">K/D: 1.25</span>
-          </div>
+        
+        <div class="player-unit">
+            <div class="p-header">
+              <h4 class="p-nick">ToDay</h4>
+              <div class="p-role">Опен-Фрагер</div>
+            </div>
+            <div class="p-stats">
+              «Концентрация решает.»<br>
+              <span style="color:var(--accent-color)">K/D: 1.25</span>
+            </div>
         </div>
-      </div>
 
-      <h3 style="margin: 40px 0 20px; opacity: 0.7;">Reserve</h3>
-      <div class="roster-grid">
-        <div class="player-unit" style="opacity: 0.7">
+       <div class="player-unit">
           <div class="p-header">
             <h4 class="p-nick">Burn</h4>
             <div class="p-role">Опорник / Open-Фрагер</div>
           </div>
           <div class="p-stats">
-            «Мужчина рождается дважды:
-            первый раз от матери,
-            второй раз — когда находит
-            смысл, ради чего жить.»<br>
+            «Мужчина рождается дважды: когда рождается и когда находит смысл жить.»<br>
             <span style="color:var(--accent-color)">K/D: 2.13</span>
           </div>
+       </div>
+
+      </div> <h3 style="margin: 40px 0 20px; opacity: 0.7;">Reserve</h3>
+        
+        <div class="roster-grid">
+            <div class="player-unit" style="opacity: 0.7">
+              <div class="p-header">
+                <h4 class="p-nick">Rampage</h4>
+                <div class="p-role">Люркер</div>
+              </div>
+              <div class="p-stats">
+                «Несчастным или счастливым человека делают только его мысли.»<br>
+                <span style="color:var(--accent-color)">K/D: 3.08</span>
+              </div>
+            </div>
         </div>
 
-        <div class="player-unit" style="opacity: 0.7">
-          <div class="p-header">
-            <h4 class="p-nick">Tatsy</h4>
-            <div class="p-role">Опорник / Люркер</div>
-          </div>
-          <div class="p-stats">
-             «Резерв — это не скамейка, это второй фронт.»<br>
-             <span style="color:var(--accent-color)">K/D: ---</span>
-          </div>
-        </div>
-      </div>
     </section>
 
     <section id="about">
@@ -440,38 +446,11 @@
         <h3>Наши соцсети</h3>
         <div style="display: flex; justify-content: center; gap: 25px; padding: 15px 0; flex-wrap: wrap;">
           
-          <style>
-            .social-icon {
-              color: #ff0000; 
-              font-size: 32px; 
-              transition: 0.3s;
-              text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
-            }
-            .social-icon:hover {
-              text-shadow: 0 0 20px rgba(255, 0, 0, 1);
-              transform: scale(1.1);
-            }
-          </style>
-
-          <a href="https://t.me/airex_team" target="_blank" class="social-icon">
-            <i class="fab fa-telegram"></i>
-          </a>
-
-          <a href="https://www.tiktok.com/@airex_team?_r=1&_t=ZS-92kyuwVYdaX" target="_blank" class="social-icon">
-            <i class="fab fa-tiktok"></i>
-          </a>
-
-          <a href="https://vk.ru/airex_team" target="_blank" class="social-icon">
-            <i class="fab fa-vk"></i>
-          </a>
-
-          <a href="https://youtube.com/@airex_team.official?si=Zpyt10GXVFQddMqp" target="_blank" class="social-icon">
-            <i class="fab fa-youtube"></i>
-          </a>
-
-          <a href="https://www.twitch.tv/airex_team" target="_blank" class="social-icon">
-            <i class="fab fa-twitch"></i>
-          </a>
+          <a href="https://t.me/airex_team" target="_blank" class="social-icon"><i class="fab fa-telegram"></i></a>
+          <a href="https://www.tiktok.com/@airex_team?_r=1&_t=ZS-92kyuwVYdaX" target="_blank" class="social-icon"><i class="fab fa-tiktok"></i></a>
+          <a href="https://vk.ru/airex_team" target="_blank" class="social-icon"><i class="fab fa-vk"></i></a>
+          <a href="https://youtube.com/@airex_team.official?si=Zpyt10GXVFQddMqp" target="_blank" class="social-icon"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.twitch.tv/airex_team" target="_blank" class="social-icon"><i class="fab fa-twitch"></i></a>
 
         </div>
       </div>
@@ -485,14 +464,121 @@
       </div>
     </section>
 
-    <section id="join">
+   <section id="media">
+    <div class="card">
+      <h3>📸 Галерея команды</h3>
+      <p>Лучшие моменты, скриншоты с праков и наши победы.</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" 
+             style="background-image: url('https://i.postimg.cc/X7JxT5Wp/IMG_20260103_231729_893.jpg');"
+             data-src="https://i.postimg.cc/X7JxT5Wp/IMG_20260103_231729_893.jpg"
+             data-caption="ACE by Nazzzy">
+          <div class="gallery-overlay">ACE by Nazzzy</div>
+        </div>
+
+        <div class="gallery-item" 
+             style="background-image: url('https://i.postimg.cc/VL643twC/IMG-20260103-231733-964.jpg');"
+             data-src="https://i.postimg.cc/VL643twC/IMG-20260103-231733-964.jpg"
+             data-caption="ACE by ToDay">
+          <div class="gallery-overlay">ACE by ToDay</div>
+        </div>
+
+        <div class="gallery-item" 
+             style="background-image: url('https://i.postimg.cc/DyZ5tGhs/IMG_20260103_231725_487.jpg');"
+             data-src="https://i.postimg.cc/DyZ5tGhs/IMG_20260103_231725_487.jpg"
+             data-caption="Победа над E0R Esports">
+          <div class="gallery-overlay">Победа над E0R Esports</div>
+        </div>
+
+        <div class="gallery-item" 
+             style="background-image: url('https://i.postimg.cc/653zDZK7/IMG_20260103_231815_987.jpg');"
+             data-src="https://i.postimg.cc/653zDZK7/IMG_20260103_231815_987.jpg"
+             data-caption="Победа на турнире ApeX Star Tournament">
+          <div class="gallery-overlay">Победа на турнире ApeX Star Tournament</div>
+        </div>
+
+        <div class="gallery-item" 
+             style="background-image: url('https://i.postimg.cc/3J9LbHc6/IMG-20260103-235259-337.jpg');"
+             data-src="https://i.postimg.cc/3J9LbHc6/IMG-20260103-235259-337.jpg"
+             data-caption="Первый логотип команды">
+          <div class="gallery-overlay">Первый логотип команды</div>
+        </div>
+
+        <div class="gallery-item" 
+             style="background-image: url('https://i.postimg.cc/vTT1YfG7/IMG-20260103-235549-598.jpg'); background-color: #222;"
+             data-src="https://i.postimg.cc/vTT1YfG7/IMG-20260103-235549-598.jpg"
+             data-caption="Main Roster">
+          <div class="gallery-overlay">Main Roster</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🎥 MOMENTS</h3>
+      <p>Смотри наши последние мувики на YouTube.</p>
+
+      <div class="video-wrapper" data-video-id="Cq3ej9jtyIY">
+        <div class="video-preview">
+          <span class="play-btn">▶</span>
+        </div>
+      </div>
+
+      <a href="https://youtube.com/@airex_team.official"
+         target="_blank"
+         class="btn-glitch"
+         style="margin-top: 15px; width: 100%;">
+        Перейти на канал
+      </a>
+    </div>
+  </section>
+
+  <section id="join">
       <div class="card" style="text-align: center;">
         <h3>Join the Legacy</h3>
-        <p>Мы ищем таланты. Если ты уверен в себе — пиши.</p>
-        <br>
-        <a href="https://t.me/kas_off" target="_blank" class="btn-glitch">
-          Telegram: @kas_off
-        </a>
+        <p style="margin-bottom: 25px;">Заполни анкету, и мы рассмотрим твою кандидатуру.</p>
+        
+        <form id="recruitForm" onsubmit="sendToTelegram(event)">
+          
+          <div class="form-group">
+            <label class="form-label">Твой Никнейм</label>
+            <input type="text" id="nick" class="form-input" placeholder="Например: Sn1per" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group" style="flex: 1;">
+              <label class="form-label">Возраст</label>
+              <input type="number" id="age" class="form-input" placeholder="16" required>
+            </div>
+            <div class="form-group" style="flex: 1;">
+              <label class="form-label">Твой K/D</label>
+              <input type="number" step="0.01" id="kd" class="form-input" placeholder="1.50" required>
+            </div>
+          </div> 
+          
+          <div class="form-group">
+            <label class="form-label">Роль</label>
+            <select id="role" class="form-input" style="cursor: pointer;">
+              <option value="Рифлер">Рифлер (Assault)</option>
+              <option value="Снайпер">Снайпер (AWP)</option>
+              <option value="Капитан">Капитан (IGL)</option>
+              <option value="Саппорт">Саппорт</option>
+              <option value="Любая">Готов на любую</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Часов в игре</label>
+            <input type="text" id="hours" class="form-input" placeholder="Например: 2000ч" required>
+          </div>
+
+          <br>
+          <button type="submit" class="btn-glitch" style="width: 100%; cursor: pointer;">
+            Отправить заявку 🚀
+          </button>
+        </form>
+
       </div>
     </section>
 
@@ -502,13 +588,147 @@
     © 2026 Airex Team - Киберспортивная команда
   </footer>
 
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-close" id="lightboxClose">&times;</div>
+    <div class="lb-nav lb-prev" id="lbPrev">&#10094;</div>
+    <div class="lb-nav lb-next" id="lbNext">&#10095;</div>
+    
+    <div class="lightbox-content">
+      <img src="" alt="Gallery Image" class="lightbox-img" id="lightboxImg">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+  </div>
+
   <script>
-    // Инициализация WebApp для корректной работы в Telegram
+    // --- Telegram WebApp ---
     const tg = window.Telegram.WebApp;
     tg.expand(); 
     tg.ready();
 
+    // --- Форма ---
+    function sendToTelegram(e) {
+      e.preventDefault(); 
+      const nick = document.getElementById('nick').value;
+      const age = document.getElementById('age').value;
+      const kd = document.getElementById('kd').value;
+      const role = document.getElementById('role').value;
+      const hours = document.getElementById('hours').value;
+
+      const text = `
+🚀 *НОВАЯ ЗАЯВКА В AIREX* 🚀
+---------------------------
+👤 *Ник:* ${nick}
+🎂 *Возраст:* ${age}
+🔫 *Роль:* ${role}
+📊 *K/D:* ${kd}
+⏳ *Часы:* ${hours}
+---------------------------
+Жду ответа!`;
+
+      const encodedText = encodeURIComponent(text);
+      window.open(`https://t.me/kas_off?text=${encodedText}`, '_blank');
+    }
+
+    // --- Видео ---
+    const videoBlock = document.querySelector('.video-wrapper');
+    function loadVideo() {
+      if (videoBlock.classList.contains('loaded')) return;
+      const videoId = videoBlock.dataset.videoId;
+      videoBlock.innerHTML = `
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1" title="Airex Team Highlight" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+      videoBlock.classList.add('loaded');
+    }
+    videoBlock.addEventListener('click', loadVideo);
+
+    // --- LIGHTBOX & SWIPE LOGIC ---
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const closeBtn = document.getElementById('lightboxClose');
+    const prevBtn = document.getElementById('lbPrev');
+    const nextBtn = document.getElementById('lbNext');
+    
+    let currentIndex = 0;
+    
+    // Открытие картинки
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        currentIndex = index;
+        openLightbox();
+      });
+    });
+    
+    function openLightbox() {
+      const currentItem = galleryItems[currentIndex];
+      const src = currentItem.getAttribute('data-src');
+      const caption = currentItem.getAttribute('data-caption');
+      
+      lightboxImg.src = src;
+      lightboxCaption.textContent = caption;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = ''; // Возвращаем скролл
+    }
+    
+    function showNext() {
+      currentIndex = (currentIndex + 1) % galleryItems.length;
+      openLightbox();
+    }
+    
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+      openLightbox();
+    }
+
+    // Кнопки управления
+    closeBtn.addEventListener('click', closeLightbox);
+    nextBtn.addEventListener('click', showNext);
+    prevBtn.addEventListener('click', showPrev);
+    
+    // Закрытие по клику вне картинки
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    // Управление клавиатурой
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'ArrowLeft') showPrev();
+    });
+
+    // --- SWIPE LOGIC (СВАЙПЫ) ---
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    lightbox.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true});
+    
+    lightbox.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, {passive: true});
+    
+    function handleSwipe() {
+      const threshold = 50; // Минимальное расстояние для свайпа
+      if (touchEndX < touchStartX - threshold) {
+        showNext(); // Свайп влево -> След. картинка
+      }
+      if (touchEndX > touchStartX + threshold) {
+        showPrev(); // Свайп вправо -> Пред. картинка
+      }
+    }
+
+    // --- Табы (С АВТО-ОСТАНОВКОЙ ВИДЕО) ---
     function openTab(id, btn) {
+      // 1. Стандартное переключение секций
       document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
       
@@ -516,6 +736,21 @@
       btn.classList.add('active');
 
       window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // 2. Логика для остановки видео
+      if (id !== 'media') {
+        const vBlock = document.querySelector('.video-wrapper');
+        
+        // Если видео сейчас загружено, удаляем iframe и возвращаем картинку
+        if (vBlock.classList.contains('loaded')) {
+          vBlock.classList.remove('loaded');
+          vBlock.innerHTML = `
+            <div class="video-preview">
+              <span class="play-btn">▶</span>
+            </div>
+          `;
+        }
+      }
     }
   </script>
 
